@@ -11,7 +11,7 @@
 #include <dt-bindings/input/input.h>
 
 / {
-	model = "OMAP36xx/AM37xx/DM37xx Gumstix Overo on Alto35";
+	model = "OMAP36xx/AM37xx/DM37xx Gumstix Overo on Exoflex";
 	compatible = "gumstix,omap3-overo-alto35", "gumstix,omap3-overo", "ti,omap36xx", "ti,omap3";
 };
 
@@ -118,7 +118,7 @@
 		>;
 	};
 
-	lb035_pins: pinmux_lb035_pins {
+	kd035fm_pins: pinmux_kd035fm_pins {
 		pinctrl-single,pins = <
 			OMAP3_CORE1_IOPAD(0x2174, PIN_OUTPUT | MUX_MODE4)	/* uart2_cts.gpio_144 */
 		>;
@@ -161,7 +161,7 @@
 	port {
 		dpi_out: endpoint {
 			remote-endpoint = <&lcd_in>;
-			data-lines = <24>;
+			data-lines = <18>;
 		};
 	};
 };
@@ -194,17 +194,17 @@
 	pinctrl-0 = <&mcspi1_pins>;
 
 	lcd0: display@0 {
-		compatible = "lgphilips,lb035q02";
+		compatible = "startek,kd035fm";
 		label = "lcd35";
 
-		reg = <1>;					/* CS1 */
-		spi-max-frequency = <500000>;
+		reg = <0>;					/* CS0 */
+		spi-max-frequency = <50000>;
 		spi-cpol;
 		spi-cpha;
 
 		pinctrl-names = "default";
-		pinctrl-0 = <&lb035_pins>;
-		enable-gpios = <&gpio5 16 GPIO_ACTIVE_HIGH>;	/* gpio_144 */
+		pinctrl-0 = <&kd035fm_pins>;
+		reset-gpios = <&gpio5 16 GPIO_ACTIVE_HIGH>;	/* gpio_144 */
 
 		port {
 			lcd_in: endpoint {

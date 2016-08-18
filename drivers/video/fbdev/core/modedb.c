@@ -229,6 +229,10 @@ static const struct fb_videomode modedb[] = {
 	{ NULL, 72, 320, 240, 63492, 16, 16, 16, 4, 48, 2, 0,
 		FB_VMODE_DOUBLE },
 
+	/* 320x480 @ 60 Hz */
+	{ NULL, 60, 320, 480, 117647, 10, 10, 2, 2, 18, 2, 0,
+		FB_VMODE_NONINTERLACED },
+
 	/* 400x300 @ 56 Hz, 35.2 kHz hsync, 4:3 aspect ratio */
 	{ NULL, 56, 400, 300, 55555, 64, 16, 10, 1, 32, 1, 0,
 		FB_VMODE_DOUBLE },

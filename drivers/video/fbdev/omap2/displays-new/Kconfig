@@ -51,6 +51,12 @@ config DISPLAY_PANEL_LGPHILIPS_LB035Q02
 	help
 	  LCD Panel used on the Gumstix Overo Palo35
 
+config DISPLAY_PANEL_STARTEK_KD035FM
+	tristate "Startek KD035FM LCD Panel"
+	depends on SPI
+	help
+	  LCD Panel used on the Exoflex device
+
 config DISPLAY_PANEL_SHARP_LS037V7DW01
         tristate "Sharp LS037V7DW01 LCD Panel"
         depends on BACKLIGHT_CLASS_DEVICE
