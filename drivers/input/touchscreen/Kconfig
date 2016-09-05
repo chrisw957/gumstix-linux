@@ -962,4 +962,17 @@ config TOUCHSCREEN_ZFORCE
 	  To compile this driver as a module, choose M here: the
 	  module will be called zforce_ts.
 
+config TOUCHSCREEN_GT9XX
+	tristate "Goodix GT9XX I2C Touchscreen support"
+	depends on I2C
+	depends on GPIOLIB
+	help
+	  Say Y here if you have a touchscreen based on the
+	  Goodix GT968 controller connected to your system.
+
+	  If unsure, say N.
+
+	  To compile this driver as a module, choose M here: the
+	  module will be called goodix_ts.
+
 endif
