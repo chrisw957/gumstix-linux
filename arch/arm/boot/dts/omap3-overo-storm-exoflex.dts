@@ -200,7 +200,12 @@
 		interrupt-parent = <&gpio4>;
 		interrupts = <18 0>;			/* gpio_114 */
 		pendown-gpio = <&gpio4 18 0>;
-	};	
+	};
+
+	amplifier: lm48100q@7c {
+		compatible = "ti,lm48100q";
+		reg = <0x7c>;
+	};
 };
 
 &mcspi1 {
