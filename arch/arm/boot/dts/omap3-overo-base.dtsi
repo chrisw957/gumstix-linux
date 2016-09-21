@@ -158,6 +158,11 @@
 		interrupts = <7>; /* SYS_NIRQ cascaded to intc */
 		interrupt-parent = <&intc>;
 
+		twl_power: power {
+			compatible = "ti,twl4030-power";
+			ti,use_poweroff;
+		};
+
 		twl_audio: audio {
 			compatible = "ti,twl4030-audio";
 			codec {
