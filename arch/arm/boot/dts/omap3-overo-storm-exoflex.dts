@@ -44,6 +44,12 @@
 		#size-cells = <0>;
 		pinctrl-names = "default";
 		pinctrl-0 = <&button_core2_pins>;
+		button1@14 {
+			label = "button1";
+			linux,code = <BTN_1>;
+			gpios = <&gpio1 14 GPIO_ACTIVE_LOW>;		/* gpio_14 */
+			gpio-key,wakeup;
+		};
 		button2@12 {
 			label = "button2";
 			linux,code = <BTN_2>;
@@ -159,6 +165,7 @@
 	button_core2_pins: pinmux_button_core2_pins {
 		pinctrl-single,pins = <
 			OMAP3630_CORE2_IOPAD(0x25d8, PIN_INPUT | MUX_MODE4)		/* etk_clk.gpio_12 */
+			OMAP3630_CORE2_IOPAD(0x25dc, PIN_INPUT | MUX_MODE4)		/* etk_d0.gpio_14 */
 		>;
 	};
 };
