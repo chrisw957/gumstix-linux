@@ -43,11 +43,11 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 		pinctrl-names = "default";
-		pinctrl-0 = <&button_pins>;
-		button0@10 {
-			label = "button0";
-			linux,code = <BTN_0>;
-			gpios = <&gpio1 10 GPIO_ACTIVE_LOW>;		/* gpio_10 */
+		pinctrl-0 = <&button_core2_pins>;
+		button2@12 {
+			label = "button2";
+			linux,code = <BTN_2>;
+			gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;		/* gpio_12 */
 			gpio-key,wakeup;
 		};
 	};
@@ -145,12 +145,20 @@
 			OMAP3_CORE1_IOPAD(0x2138, PIN_INPUT_PULLDOWN | MUX_MODE4)	/* csi2_dx1.gpio_114 */
 		>;
 	};
+
 };
+
 
 &omap3_pmx_core2 {
 	gt9xx_core2_pins: pinmux_gt9xx_core2_pins {
 		pinctrl-single,pins = <
 			OMAP3630_CORE2_IOPAD(0x25e8, PIN_OUTPUT | MUX_MODE4)  /* etk_d6.gpio_20 */
+		>;
+	};
+
+	button_core2_pins: pinmux_button_core2_pins {
+		pinctrl-single,pins = <
+			OMAP3630_CORE2_IOPAD(0x25d8, PIN_INPUT | MUX_MODE4)		/* etk_clk.gpio_12 */
 		>;
 	};
 };
