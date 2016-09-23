@@ -166,6 +166,7 @@
 		pinctrl-single,pins = <
 			OMAP3630_CORE2_IOPAD(0x25d8, PIN_INPUT | MUX_MODE4)		/* etk_clk.gpio_12 */
 			OMAP3630_CORE2_IOPAD(0x25dc, PIN_INPUT | MUX_MODE4)		/* etk_d0.gpio_14 */
+			OMAP3630_CORE2_IOPAD(0x25e6, PIN_OUTPUT | MUX_MODE4)	/* etk_d4.gpio_19 */
 		>;
 	};
 };
